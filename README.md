@@ -1,2 +1,2 @@
 # has
-Hardware Accelerated Sound - for DOS
+System library for hag and ham.
