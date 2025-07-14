@@ -35,6 +35,11 @@ message("Environment variable DXE_LD_LIBRARY_PATH: $ENV{DXE_LD_LIBRARY_PATH}")
 include_directories(include)
 
 add_library(has
+            src/math/flt/flt.cpp
+            src/math/flt/m44.cpp
+            src/math/fp/fp.cpp
+            src/math/fp/fptables.cpp
+            src/math/fp/m44.cpp
             src/system/pci.cpp
             src/system/pit.cpp
             src/testing/log.cpp
