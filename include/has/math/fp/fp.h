@@ -6,18 +6,18 @@
 
 namespace Has::Math { class fp; }
 /*
-Hag::Math::fp imulfp(Hag::Math::fp a, Hag::Math::fp b);
+Has::Math::fp imulfp(Has::Math::fp a, Has::Math::fp b);
 #pragma aux imulfp =            \
         "imul edx"              \
         "shrd eax, edx, 16"     \
         parm [eax] [edx] modify exact [eax edx] value [eax];
 
-Hag::Math::fp imulint32(Hag::Math::fp a, int32_t b);
+Has::Math::fp imulint32(Has::Math::fp a, int32_t b);
 #pragma aux imulint32 =         \
         "imul edx"              \
         parm [eax] [edx] modify exact [eax edx] value [eax];
 
-Hag::Math::fp idivfp(Hag::Math::fp a, Hag::Math::fp b);
+Has::Math::fp idivfp(Has::Math::fp a, Has::Math::fp b);
 #pragma aux idivfp =            \
         "mov edx, eax"          \
         "sar edx, 16"           \
@@ -25,19 +25,19 @@ Hag::Math::fp idivfp(Hag::Math::fp a, Hag::Math::fp b);
         "idiv ebx"              \
         parm [eax] [ebx] modify exact [eax edx] value [eax];
 
-Hag::Math::fp idivint32(Hag::Math::fp a, int32_t b);
+Has::Math::fp idivint32(Has::Math::fp a, int32_t b);
 #pragma aux idivint32 =         \
         "cdq"                   \
         "idiv ebx"              \
         parm [eax] [ebx] modify exact [eax edx] value [eax];
 
-Hag::Math::fp int32idiv(int32_t a, Hag::Math::fp b);
+Has::Math::fp int32idiv(int32_t a, Has::Math::fp b);
 #pragma aux int32idiv =         \
         "xor eax, eax"          \
         "idiv ebx"              \
         parm [edx] [ebx] modify exact [eax edx] value [eax];
 
-Hag::Math::fp imodfp(Hag::Math::fp a, Hag::Math::fp b);
+Has::Math::fp imodfp(Has::Math::fp a, Has::Math::fp b);
 #pragma aux imodfp =            \
         "mov edx, eax"          \
         "shl eax, 16"           \
@@ -45,7 +45,7 @@ Hag::Math::fp imodfp(Hag::Math::fp a, Hag::Math::fp b);
         "idiv ebx"              \
         parm [eax] [ebx] modify exact [eax edx] value [edx];
 
-Hag::Math::fp imodint32(Hag::Math::fp a, int32_t b);
+Has::Math::fp imodint32(Has::Math::fp a, int32_t b);
 #pragma aux imodint32 =         \
         "shl ebx, 16"           \
         "mov edx, eax"          \
@@ -54,7 +54,7 @@ Hag::Math::fp imodint32(Hag::Math::fp a, int32_t b);
         "idiv ebx"              \
         parm [eax] [ebx] modify exact [eax edx] value [edx];
 
-Hag::Math::fp int32imod(int32_t a, Hag::Math::fp b);
+Has::Math::fp int32imod(int32_t a, Has::Math::fp b);
 #pragma aux int32imod =         \
         "xor eax, eax"          \
         "idiv ebx"              \
