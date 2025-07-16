@@ -26,7 +26,6 @@ add_link_options(
     "$<$<CONFIG:RELEASE>:-s>"
 )
 
-#How do i make this blasted thing do this conditionally???
 #add_compile_options(-D MOCK)
 
 set (ENV{DJDIR} "${CMAKE_FIND_ROOT_PATH}/djgpp/")
@@ -49,6 +48,7 @@ add_library(has
 
 add_library(hassup
             support/allocatr.cpp
+            support/env.cpp
            )
 
 add_executable(test
