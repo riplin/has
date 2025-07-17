@@ -43,12 +43,14 @@ add_library(has
             src/math/fp/m44.cpp
             src/system/pci.cpp
             src/system/pit.cpp
+            src/system/system.cpp
             src/testing/log.cpp
            )
 
 add_library(hassup
             support/allocatr.cpp
             support/env.cpp
+            support/filestrm.cpp
            )
 
 add_executable(test
