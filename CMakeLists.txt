@@ -43,7 +43,9 @@ add_library(has
             src/math/fp/m44.cpp
             src/system/pci.cpp
             src/system/pit.cpp
+            src/system/pic.cpp
             src/system/system.cpp
+            src/system/interrup.cpp
             src/testing/log.cpp
            )
 

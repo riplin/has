@@ -69,6 +69,9 @@ namespace Mask
 
     inline void Write1(Mask_t mask) { SYS_WritePortByte(Register::Mask1, mask); }
     inline void Write2(Mask_t mask) { SYS_WritePortByte(Register::Mask2, mask); }
+
+    extern void MaskInterrupt(uint8_t interrupt);
+    extern void UnmaskInterrupt(uint8_t interrupt);
 }
 
 // Bitfields for PIC output control word OCW2:
@@ -117,6 +120,8 @@ namespace Control
 
     inline void Write1(Control_t mask) { SYS_WritePortByte(Register::Control1, mask); }
     inline void Write2(Control_t mask) { SYS_WritePortByte(Register::Control2, mask); }
+
+    extern void ClearPendingInterrupt(uint8_t interrupt);
 }
 
 }

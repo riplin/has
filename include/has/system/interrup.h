@@ -19,4 +19,7 @@ namespace Has::System::InterruptTable
     template <Interrupt_t intr>
     inline static FARPointer& Pointer() { return *FARPointer(0x0000, intr << 2).ToPointer<FARPointer>(); }
 
+    extern void SetupHandler(uint8_t interrupt, void (*handler)());
+    extern void RestoreHandler(uint8_t interrupt);
+
 }
