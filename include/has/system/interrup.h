@@ -22,4 +22,7 @@ namespace Has::System::InterruptTable
     extern void SetupHandler(uint8_t interrupt, void (*handler)());
     extern void RestoreHandler(uint8_t interrupt);
 
+    extern void ChainHandler(uint8_t interrupt, void (*handler)());
+    extern void UnchainHandler(uint8_t interrupt);
+
 }

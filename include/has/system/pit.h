@@ -11,6 +11,8 @@ namespace Has::System::PIT
 extern void Sleep(uint8_t count);//count * 8 * 1193 ticks time
 extern void MiniSleep();//1193 ticks time
 
+extern uint16_t CalculateDivisor(uint16_t frequencyInHz);
+
 namespace Register
 {
     enum

@@ -7,6 +7,11 @@
 namespace Has::System::PIT
 {
 
+uint16_t CalculateDivisor(uint16_t frequencyInHz)
+{
+    return uint16_t(1193180 / frequencyInHz);
+}
+
 static void SetupSquareWave()
 {
     Command::Write(Command::ModeSquareWaveGenerator | Command::LowByteHighByte | Command::SelectChannel2);

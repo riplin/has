@@ -62,6 +62,20 @@ void SetupHandler(uint8_t interrupt, void (*handler)())
     SYS_RestoreInterrupts();
 }
 
+void ChainHandler(uint8_t interrupt, void (*handler)())
+{
+    interrupt &= 0x0f;
+
+    s_NewHandler[interrupt].pm_offset = (unsigned long)handler;
+    s_NewHandler[interrupt].pm_selector = _go32_my_cs();
+    //_go32_dpmi_allocate_iret_wrapper(&s_NewHandler[interrupt]);
+    
+    SYS_ClearInterrupts();
+    _go32_dpmi_get_protected_mode_interrupt_vector(interrupt, &s_OldHandler[interrupt]);
+    _go32_dpmi_chain_protected_mode_interrupt_vector(interrupt, &s_NewHandler[interrupt]);
+    SYS_RestoreInterrupts();
+}
+
 void RestoreHandler(uint8_t interrupt)
 {
     interrupt &= 0x0f;
@@ -71,6 +85,15 @@ void RestoreHandler(uint8_t interrupt)
     SYS_RestoreInterrupts();
 
     _go32_dpmi_free_iret_wrapper(&s_NewHandler[interrupt]);
+}
+
+void UnchainHandler(uint8_t interrupt)
+{
+    interrupt &= 0x0f;
+
+    SYS_ClearInterrupts();
+    _go32_dpmi_set_protected_mode_interrupt_vector(interrupt, &s_OldHandler[interrupt]);
+    SYS_RestoreInterrupts();
 }
 
 }
