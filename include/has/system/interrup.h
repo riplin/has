@@ -12,6 +12,7 @@ namespace Has::System::InterruptTable
 
     enum
     {
+        Keyboard = 0x09,
         GraphicsFont8x8 = 0x1f,
         CharacterTable = 0x43
     };

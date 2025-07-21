@@ -46,6 +46,7 @@ add_library(has
             src/system/pic.cpp
             src/system/system.cpp
             src/system/interrup.cpp
+            src/system/keyboard.cpp
             src/testing/log.cpp
            )
 
