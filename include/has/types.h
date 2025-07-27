@@ -28,13 +28,19 @@ typedef unsigned int uint20_t;
 #define forceinline __attribute__((always_inline)) inline
 #endif
 
-#define HAG_LIKELY [[likely]]
-#define HAG_UNLIKELY [[unlikely]]
+#define HAS_LIKELY [[likely]]
+#define HAS_UNLIKELY [[unlikely]]
+
+#define HAS_NOCOPY(Type)                    \
+public:                                     \
+    Type(const Type&) = delete;             \
+    Type& operator=(const Type&) = delete;
 
 namespace Has
 {
     template<typename T> T min(T a, T b) { return a < b ? a : b; }
     template<typename T> T max(T a, T b) { return a > b ? a : b; }
+    template<typename T> T bound(T a, T v, T b) { return min<T>(max<T>(a, v), b); }
     template<typename T> T abs(T a) { return a < T(0) ? -a : a; }
     template<typename T> T alignup(T a, T alignment) { return (a + (alignment - 1)) & ~(alignment - 1); }
     template<typename T> T aligndown(T a, T alignment) { return a & ~(alignment - 1); }
