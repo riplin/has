@@ -44,6 +44,8 @@ add_library(has
             src/system/pci.cpp
             src/system/pit.cpp
             src/system/pic.cpp
+            src/system/pnp/pnp.cpp
+            src/system/pnp/data.cpp
             src/system/system.cpp
             src/system/interrup.cpp
             src/system/keyboard.cpp
