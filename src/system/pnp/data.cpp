@@ -25,6 +25,7 @@ namespace Data
         {
             return ReadPort(s_ReadPort, address);
         }
+        return Invalid;
     }
 
 }

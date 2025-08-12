@@ -21,7 +21,7 @@ namespace LogicalDevice
 
     enum
     {
-        Card = 0x00,
+        Device0 = 0x00,
         Device1 = 0x01,
         Device2 = 0x02,
         Device3 = 0x03,

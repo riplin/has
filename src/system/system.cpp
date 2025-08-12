@@ -1,3 +1,5 @@
+//Copyright 2025-Present riplin
+
 #include <crt0.h>
 
 // No paging. We want to handle interrupts, so we can't have our code and data pulled out from under us.

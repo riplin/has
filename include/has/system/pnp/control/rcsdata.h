@@ -20,9 +20,18 @@ namespace VendorId
 {
     enum
     {
-        Vendor = 0xFFFFFFF0,
-        Revision = 0x0000000F
+        Vendor = 0xF0FFFFFF,
+        Revision = 0x0F000000
     };
+
+    namespace Shift
+    {
+        enum
+        {
+            Vendor = 0x00,
+            Revision = 0x18
+        };
+    }
 }
 
 namespace ResourceData
@@ -45,7 +54,6 @@ namespace ResourceData
         }
         SYS_RestoreInterrupts();
     }
-
 
 }
 
